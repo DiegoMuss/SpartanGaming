@@ -73,7 +73,6 @@ public class Menu extends AppCompatActivity {
 
         membrecias.add("Plus");
         membrecias.add("PlusUltra");
-        membrecias.add("Premium");
 
         Intent i = new Intent(this, Clientes.class);
         i.putExtra("listaClientes", clientes); // preparo el dato que quiero envíar.
