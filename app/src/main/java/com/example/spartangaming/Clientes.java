@@ -32,7 +32,7 @@ public class Clientes extends AppCompatActivity {
         // Recibir el dato.
         // <----
         ArrayList<String> listaClientes = (ArrayList<String>) getIntent().getSerializableExtra("listaClientes");
-        ArrayList<String> listaMembrecias = (ArrayList<String>) getIntent().getSerializableExtra("listaPlanes");
+        ArrayList<String> listaMembrecias = (ArrayList<String>) getIntent().getSerializableExtra("listaMembrecias");
 
 
         ArrayAdapter<String> adapt = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaClientes);
@@ -78,5 +78,24 @@ public class Clientes extends AppCompatActivity {
             text.setText("El precio del plan es: " + resultPlusultra);
         }
 
+        if(cliente.equals("Claudio") && membrecias.equals("Plus"))
+        {
+            text.setText("El precio del plan es: " + resultPlus);
+        }
+
+        if(cliente.equals("Claudio") && membrecias.equals("PlusUltra"))
+        {
+            text.setText("El precio del plan es: " + resultPlusultra);
+        }
+
+        if(cliente.equals("Maria") && membrecias.equals("Plus"))
+        {
+            text.setText("El precio del plan es: " + resultPlus);
+        }
+
+        if(cliente.equals("Maria") && membrecias.equals("PlusUltra"))
+        {
+            text.setText("El precio del plan es: " + resultPlusultra);
+        }
     }
 }

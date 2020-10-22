@@ -5,58 +5,69 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ProgressBar progress;
+    private EditText txt1,txt2;
+    private ProgressBar pb;
     private Button btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        progress = (ProgressBar)findViewById(R.id.pb);
-        btn = (Button)findViewById(R.id.btn);
-
-
+        txt1=(EditText) findViewById(R.id.user);
+        txt2=(EditText) findViewById(R.id.pass);
+        btn=(Button)findViewById(R.id.btn) ;
+        pb= (ProgressBar)findViewById(R.id.pb);
+        pb.setVisibility(View.INVISIBLE);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                new Task().execute(); // ejecuta mi tarea asíncrona.
+                String user, password;
+                user=txt1.getText().toString();
+                password=txt2.getText().toString();
+
+                if ((user.equals("android") || user.equals("Android")) && (password.equals("123")))
+                {
+
+                    new Task().execute();
+                }
+
             }
         });
 
-
-        progress.setVisibility(View.INVISIBLE); // desaparece el elemento.
     }
 
+    class Task extends AsyncTask<String, Void, String>
 
-    // Tarea Asíncrona.
+    {
 
-    class Task extends AsyncTask<String, Void, String> {
 
-        @Override  // Vamos a darle la configuración inicial a la tarea
-        protected void onPreExecute() {
+        @Override
+        protected void onPreExecute()
+        {
 
-            progress.setVisibility(View.VISIBLE);
+            pb.setVisibility(View.VISIBLE);
+
         }
 
-
-        @Override // vamos a emplear el proceso o tarea pesada en segundo plano.
+        @Override
         protected String doInBackground(String... strings) {
-
-            for(int i = 1; i < 10; i++)
+            for(int i=1; i<=10; i++)
             {
-                try {
+                try
+                {
                     Thread.sleep(500);
-
-                }catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     e.printStackTrace();
                 }
@@ -64,15 +75,13 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-
-        @Override // finalizamos la tarea
-        protected void onPostExecute(String s) {
-
-            progress.setVisibility(View.INVISIBLE);
-
+        @Override
+        protected void onPostExecute(String s)
+        {
             Intent i = new Intent(getBaseContext(), Menu.class);
             startActivity(i);
-
         }
+
     }
+
 }
