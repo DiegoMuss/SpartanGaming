@@ -962,6 +962,10 @@ id bottom
 id bounce
 id btn
 id button
+id button2
+id button3
+id button4
+id button5
 id buttonPanel
 id center
 id center_vertical
@@ -997,7 +1001,11 @@ id dragUp
 id easeIn
 id easeInOut
 id easeOut
+id edcodigo
 id edit_query
+id ednombre
+id edprecio
+id edprestamo
 id end
 id et1
 id expand_activities_button
@@ -1038,6 +1046,7 @@ id line3
 id linear
 id linearLayout
 id linearLayout2
+id linearLayout3
 id listMode
 id list_item
 id map
@@ -1150,6 +1159,7 @@ id uniform
 id up
 id useLogo
 id user
+id vd
 id visible
 id wide
 id withText
@@ -1196,6 +1206,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_basedatos
 layout activity_clientes
 layout activity_info
 layout activity_main
@@ -1214,6 +1225,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw video
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

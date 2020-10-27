@@ -43,6 +43,7 @@
                     android:layout_width="205dp"
                     android:layout_height="67dp"
                     android:background="@color/common_google_signin_btn_text_dark_default"
+                    android:onClick="BBSS"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageButton"

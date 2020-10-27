@@ -79,4 +79,10 @@ public class Menu extends AppCompatActivity {
         i.putExtra("listaMembrecias", membrecias);
         startActivity(i);
     }
+
+    public void BBSS(View v)
+    {
+        Intent i = new Intent(this, Basedatos.class);
+        startActivity(i);
+    }
 }
